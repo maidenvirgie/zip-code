@@ -18,7 +18,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('zone_type');
             $table->string('settlement_type');
+            $table->string('key');
             $table->unsignedBigInteger('zip_code');
+            $table->timestamps();
+
 
             $table->foreign('zip_code')->references('id')->on('zip_codes');
 

@@ -7,7 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Settlement extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'name',
+        'zone_type',
+        'settlement_type',
+        'zip_code',
+        'key',
+      ];
 
     protected $table = 'settlements';
 }

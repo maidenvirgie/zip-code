@@ -15,14 +15,18 @@ return new class extends Migration
     {
         Schema::create('zip_codes', function (Blueprint $table) {
             $table->id();
+            $table->string('zip_code')->unique();
+        
             $table->unsignedBigInteger('locality_id');
             $table->unsignedBigInteger('federal_entity_id');
-            $table->unsignedBigInteger('municipal_id');
+            $table->unsignedBigInteger('municipality_id');
+            $table->timestamps();
+
 
 
             $table->foreign('locality_id')->references('id')->on('localities');
             $table->foreign('federal_entity_id')->references('id')->on('federal_entities');
-            $table->foreign('municipal_id')->references('id')->on('municipalities');
+            $table->foreign('municipality_id')->references('id')->on('municipalities');
 
 
         });

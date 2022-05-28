@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class ZipCode extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'zip_code',
+        'locality_id',
+        'federal_entity_id',
+        'municipality_id'
+
+      ];
 }

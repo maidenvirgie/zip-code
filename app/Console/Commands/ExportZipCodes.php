@@ -4,6 +4,9 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
+use App\Imports\ZipCodesSheet;
+use Maatwebsite\Excel\Facades\Excel;
+
 class ExportZipCodes extends Command
 {
     /**
@@ -18,7 +21,7 @@ class ExportZipCodes extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'This command imports data from a file excel';
 
     /**
      * Execute the console command.
@@ -27,7 +30,10 @@ class ExportZipCodes extends Command
      */
     public function handle()
     {
-        echo('Hi!');
+        Excel::import(new ZipCodesSheet, 'CPdescarga.xlsx');
+
+        $this->info("succesfull");
+
         return 0;
     }
 }

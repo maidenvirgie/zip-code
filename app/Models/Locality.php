@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Locality extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'name',
+    
+         
+      ];
 }
