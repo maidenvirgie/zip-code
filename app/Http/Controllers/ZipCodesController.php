@@ -76,7 +76,7 @@ class ZipCodesController extends Controller
 
             $settlement['name'] = $this->textTransform($row->SettlementName);
             $settlement['key'] = intval($row->SettlementKey);
-            $settlement['zone_type'] = $row->SettlementZoneType;
+            $settlement['zone_type'] = $this->textTransform($row->SettlementZoneType);
             $settlement['settlement_type']['name'] = $row->SettlementType;
 
             array_push($response['settlements'], $settlement);
